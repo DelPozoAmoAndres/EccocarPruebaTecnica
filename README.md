@@ -5,7 +5,6 @@
 - [Android Studio and Android SDK](https://developer.android.com/studio)
 
 ## Base dependencies
-- [react-native-linear-gradient](https://github.com/react-native-linear-gradient/react-native-linear-gradient) to add a gradiant above an image
 - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) to add icons.
 - [react-navigation](https://reactnavigation.org/) navigation library.
 - [jest](https://facebook.github.io/jest/) and [testing-library](https://testing-library.com/docs/react-native-testing-library/intro/) for testing.

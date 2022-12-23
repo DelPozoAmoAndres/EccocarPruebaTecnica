@@ -1,4 +1,4 @@
-package com.eccocarpruebatecnica.newarchitecture;
+package com.multimediaapp.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.eccocarpruebatecnica.BuildConfig;
-import com.eccocarpruebatecnica.newarchitecture.components.MainComponentsRegistry;
-import com.eccocarpruebatecnica.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.multimediaapp.BuildConfig;
+import com.multimediaapp.newarchitecture.components.MainComponentsRegistry;
+import com.multimediaapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

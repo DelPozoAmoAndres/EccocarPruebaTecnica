@@ -1,4 +1,4 @@
-import { ScrollView, Text, View, StyleSheet } from "react-native"
+import { Text, View, StyleSheet, FlatList } from "react-native"
 import React from "react"
 import { Element } from "./Element"
 
@@ -6,49 +6,50 @@ import { useTheme } from "@react-navigation/native"
 
 export const Section = ({ title, data, navigation, testID }) => {
 
-    const { dark, colors } = useTheme();
+    const {colors } = useTheme();
 
     const styles = StyleSheet.create({
         view: {
             height: 270,
-            marginTop: "5%",
+            marginVertical: 10,
+            marginHorizontal: 10,
             backgroundColor: colors.background
         },
         title: {
-            marginLeft: "5%",
             color: colors.text,
             fontWeight: "bold",
-            fontSize:20,
-            marginBottom:"5%"
+            fontSize: 20,
+            marginBottom: 20,
+            
         },
-        scrollView: {
-            backgroundColor: colors.background
-        },
-        firstElement: {
-            height: "100%",
-            marginLeft: 20,
-            marginRight: 20,
-            backgroundColor: colors.background
-        },
-        restElement: {
-            height: "100%",
-            marginRight: 20,
-            backgroundColor: colors.background
-        }
-    })
+        list: {
+            backgroundColor: colors.background,
+            width: "100%"
 
+        },
+        separator: {
+            paddingHorizontal: 10,
+            backgroundColor: colors.background
+        },
+    })
     return (
+        data?
         <View style={styles.view} testID={testID}>
             <Text style={styles.title}>{title}</Text>
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}
-                contentContainerStyle={{ flexGrow: 1 }}
-                style={styles.scrollView}>
-                {data?.map((item, index) => (
-                    <View style={index === 0 ? styles.firstElement : styles.restElement} key={item.id}>
-                        <Element testID={"element"+index} imageUrl={item.poster_path} title={item.title} onPress={() => { navigation.navigate("detail", { data: item }) }} />
-                    </View>
-                ))}
-            </ScrollView>
-        </View>)
+            <FlatList
+                ItemSeparatorComponent={() => <View style={styles.separator} />}
+                data={data}
+                horizontal={true}
+                style={styles.list}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item, index }) =>
+                    <Element
+                        testID={"element" + index}
+                        imageUrl={item.poster_path}
+                        title={item.title}
+                        onPress={() => { navigation.navigate("detail", { data: item }) }} />}
+            />
+        </View>:<></>
+    )
 }
 

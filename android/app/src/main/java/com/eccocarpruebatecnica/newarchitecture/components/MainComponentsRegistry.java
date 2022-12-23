@@ -1,4 +1,4 @@
-package com.eccocarpruebatecnica.newarchitecture.components;
+package com.multimediaapp.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;
